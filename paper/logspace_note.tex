@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs,tabularx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\FL}{\mathrm{FL}}
+\newcommand{\FLpos}{\mathrm{FL}_{\geq0}}
+\newcommand{\sharpL}{\#\mathrm L}
+\newcommand{\TC}{\mathrm{TC}}
+\newcommand{\len}{\ell}
+\title{Principal Schur specialization and\protect\\ GL2 plethysm in logarithmic space}
+\author{\href{https://github.com/fengqiaoqu}{fengqiaoqu}}
+\date{22 October 2026}
+\hypersetup{pdftitle={Principal Schur specialization and GL2 plethysm in logarithmic space},pdfauthor={fengqiaoqu}}
+\begin{document}
+\maketitle
+\begin{abstract}
+For an arbitrary partition $\lambda$ and unary integers $k,r\geq0$, we show
+that $[q^r]s_\lambda(1,q,\ldots,q^k)$ is computable in deterministic
+logarithmic space, with binary output. The same holds for two-row
+$\mathrm{GL}_2$ plethysm coefficients with an arbitrary outer partition,
+and for Hermite coefficients. In particular these functions belong to
+$\FLpos\subseteq\sharpL$. The proof combines carry-free integer substitution,
+the hook-content formula, and the Hesse--Allender--Barrington integer-arithmetic
+theorem. It also permits binary encoding of $k$ when the partition and $r$
+remain unary. This gives affirmative answers to Questions 6.4, 6.22, and 6.29
+of the fixed v1 PDF of \emph{Counting in logarithmic space}. The result is an
+application of classical tools; external review and priority assessment
+remain outstanding.
+\end{abstract}
+
+\section{Statements and conventions}
+For a partition $\lambda=(\lambda_1\geq\cdots\geq\lambda_\ell>0)$ of
+size $w=|\lambda|$, put
+\[
+S_{\lambda,k}(q)=s_\lambda(1,q,\ldots,q^k)
+=\sum_{t\geq0}c_t(\lambda,k)q^t.
+\]
+The empty partition is allowed. Initially, the parts and the nonnegative
+integers $k,r$ are unary, with fixed separators; $L$ denotes total input
+length. Invalid encodings have value zero. There is no constant bound on
+$\len(\lambda)$. Outputs are binary, without leading zeros except for the
+output $0$.
+
+We use $\FL$ for deterministic transducers with read-only input,
+$O(\log L)$ work space, and write-only output. All transducers constructed
+below have polynomial time and output length. The notation $\FLpos$
+restricts to nonnegative integer-valued functions. The class $\sharpL$
+counts accepting paths of polynomial-time nondeterministic logarithmic-space
+machines.
+
+\begin{theorem}\label{thm:main}
+The unary-input function $(\lambda,k,r)\mapsto c_r(\lambda,k)$ belongs to
+$\FLpos\subseteq\sharpL$.
+\end{theorem}
+
+For $\mu\vdash w$, define plethysm coefficients by
+$s_\mu[s_{(k)}]=\sum_{\nu\vdash wk}a_{\mu[(k)]}^{\nu}s_\nu$.
+\begin{theorem}\label{thm:pleth}
+For unary input and $0\leq2r\leq wk$, the function
+$(\mu,k,r)\mapsto a_{\mu[(k)]}^{(wk-r,r)}$ belongs to
+$\FLpos\subseteq\sharpL$, without a bound on $\len(\mu)$.
+Assign value zero outside this range.
+\end{theorem}
+
+\begin{theorem}\label{thm:mixed}
+The conclusions of Theorems~\ref{thm:main} and \ref{thm:pleth} remain true
+if $k$ is binary and the partition and $r$ remain unary. In
+Theorem~\ref{thm:pleth}, the target shape is specified implicitly by
+$(\mu,k,r)$.
+\end{theorem}
+
+\section{Arithmetic and virtual inputs}
+Our arithmetic input is the theorem of Hesse, Allender, and
+Barrington~\cite[Corollary 6.3]{HAB}: integer division and iterated
+multiplication are in DLOGTIME-uniform $\TC^0$. In particular, a
+polynomial number of explicitly represented binary factors of polynomial
+total length can be multiplied, and two such binary integers can be
+divided, by deterministic logarithmic-space bit algorithms.
+
+To see the space consequence, evaluate a single output of a uniform
+constant-depth threshold circuit by recursive recomputation. Each gate
+level needs a gate index, an input index, and a counter of satisfied
+inputs; the latter computes a threshold gate. Uniformity generates the
+wiring and gate types. There are only constantly many levels and each
+index or counter uses logarithmic space in the arithmetic input length.
+The circuit has polynomial size and constant depth, so recomputation
+also takes polynomial time. Repeating for each output bit gives a
+transducer.
+
+The 2014 corrigendum~\cite{HABerr} retracts parts 1 and 3 of Corollary 6.6,
+which concern bounded arithmetic. It does not retract the
+integer-arithmetic theorem used here. Neither those retracted statements
+nor the polynomial-arithmetic corollary is needed.
+
+\begin{lemma}[Virtual-input composition]\label{lem:compose}
+A constant number of logarithmic-space transducers with polynomially
+bounded intermediate lengths can be composed in logarithmic space and
+polynomial time.
+\end{lemma}
+\begin{proof}
+To simulate $F(G(x))$, store the virtual input-head position $j$ of $F$.
+When $F$ reads position $j$, rerun $G$ using an output-position counter
+until the requested bit is reached. Polynomially bounded positions need
+$O(\log L)$ bits. The simulation state and the generating subroutine
+use additive work space. Their times and the number of recomputations
+are polynomial. A fixed number of such layers preserves these bounds,
+without storing an intermediate output in full.
+\end{proof}
+
+\begin{lemma}[Carry-free substitution]\label{lem:blocks}
+Suppose $P(q)=\sum_{t=0}^d u_tq^t$ and $0\leq u_t<2^W$. For $B=2^W$,
+\begin{equation}\label{eq:block}
+u_r=\left\lfloor\frac{P(B)}{2^{Wr}}\right\rfloor\bmod2^W.
+\end{equation}
+If the relevant lengths and positions are polynomially bounded and the
+bit function of $P(B)$ is computable in logarithmic space, so is the
+binary output $u_r$.
+\end{lemma}
+\begin{proof}
+The sum $\sum_tu_tB^t$ is already a base-$B$ expansion. Thus $u_r$ is
+the width-$W$ binary block starting at position $Wr$, numbering the
+least significant bit by zero. Scan this block to find its highest
+nonzero bit, then output downwards from that position, or output zero
+if no such bit exists. Only counters and the bit algorithm are needed.
+\end{proof}
+
+\section{Principal specialization}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Repeated scans with counters validate the input and compute $w,k,r$
+and $\len(\lambda)$. If $w=0$, then $S_{\lambda,k}=1$. If
+$\len(\lambda)>k+1$, then $S_{\lambda,k}=0$. If $r>wk$, its coefficient
+is zero. These boundary cases are immediate. Otherwise $w>0$ and,
+with $K=k+1$, we have $\len(\lambda)\leq K$. Set
+\begin{equation}\label{eq:params}
+W=1+w\lceil\log_2K\rceil,\qquad B=2^W,\qquad
+b(\lambda)=\sum_i(i-1)\lambda_i.
+\end{equation}
+
+\paragraph{A strict coefficient bound.}
+The tableau expansion of a Schur polynomial has nonnegative
+coefficients. Its value at $q=1$ counts semistandard tableaux with
+$K$ available entries. Counting all assignments to the $w$ boxes gives
+\begin{equation}\label{eq:bound}
+\sum_t c_t(\lambda,k)=s_\lambda(1^K)
+\leq K^w\leq2^{w\lceil\log_2K\rceil}<B.
+\end{equation}
+This does not assume a length bound. When $K=1$, it gives $W=1$ and
+still holds. Every coefficient therefore satisfies
+Lemma~\ref{lem:blocks}.
+
+\paragraph{Exact integer evaluation.}
+For each box $u=(i,j)\in[\lambda]$, put
+\[
+a_u=K+j-i,\qquad h_u=\lambda_i-j+\lambda'_j-i+1.
+\]
+The principal-specialization hook-content formula, also used in
+\cite[\S6]{GIP}, states
+\[
+S_{\lambda,k}(q)=q^{b(\lambda)}
+\frac{\prod_u(1-q^{a_u})}{\prod_u(1-q^{h_u})}.
+\]
+Since $\len(\lambda)\leq K$, the exponents satisfy
+\begin{equation}\label{eq:positive}
+1\leq a_u\leq K+w,\qquad1\leq h_u\leq w.
+\end{equation}
+At $q=B>1$, cancel the signs of the $w$ numerator and $w$ denominator
+factors to obtain
+\begin{equation}\label{eq:quotient}
+S_{\lambda,k}(B)=
+\frac{B^{b(\lambda)}\prod_u(B^{a_u}-1)}
+{\prod_u(B^{h_u}-1)}.
+\end{equation}
+The denominator is positive, and the quotient is an exact integer:
+it is the value of an integer-coefficient polynomial at an integer.
+Only integer multiplication and division are required.
+
+\paragraph{Polynomial binary length.}
+Unary encoding gives $w,k,r=O(L)$. Also $b(\lambda)\leq w^2$ and,
+using a deliberately coarse bound, $W=O((L+1)^2)$. The numerator in
+\eqref{eq:quotient} has bit length at most
+\begin{align}\label{eq:length}
+1+W\left(b(\lambda)+\sum_u a_u\right)
+&\leq1+W\bigl(w^2+w(K+w)\bigr)\notag\\
+&=O((L+1)^4).
+\end{align}
+The denominator has at most $1+Ww^2$ bits; the quotient is no longer
+than the numerator. The integers may be exponentially large in value,
+but their binary representations have polynomial length.
+
+\paragraph{Generating factors and extracting a block.}
+A stored box coordinate $(i,j)$ and a scan determine $\lambda_i$.
+Another scan counts the parts at least $j$ to obtain $\lambda'_j$.
+All exponents, positions, and quantities in \eqref{eq:params} and
+\eqref{eq:positive} are polynomially bounded and computable with a
+constant number of logarithmic-size counters.
+
+Each factor $B^e-1=2^{We}-1$ is a string of $We$ ones.
+The factor $B^{b(\lambda)}$ is a one followed by $Wb(\lambda)$ zeros.
+Consequently, the factor lists in \eqref{eq:quotient}, including padding
+and separators for a fixed arithmetic encoding, are polynomial-length
+virtual inputs with logarithmic-space bit functions. Apply iterated
+multiplication separately to the two lists and integer division to the
+products. By Lemma~\ref{lem:compose}, the bit function of
+$S_{\lambda,k}(B)$ is in logarithmic space. There are constantly many
+composition layers: the number of boxes is the number of factors in
+one iterated-multiplication instance, not the number of layers.
+Finally \eqref{eq:bound} and Lemma~\ref{lem:blocks} compute $c_r$ in $\FL$.
+
+\paragraph{A counting machine.}
+For the $\sharpL$ inclusion, use $0\leq c_r<2^W$. Guess exactly $W$
+bits, most significant first, specifying $y\in\{0,\ldots,2^W-1\}$.
+Maintain a position counter and the three-way comparison state of the
+prefixes of $y$ and $c_r$. At each position, deterministically recompute
+the corresponding bit of $c_r$, padded with zeros. Accept exactly when
+$y<c_r$. There is one path per length-$W$ binary string and hence exactly
+$c_r$ accepting paths. The machine has logarithmic work space and
+polynomial time on every path. Each guessed bit is consumed once;
+past nondeterministic choices are not guessed again to reconstruct a
+witness. Boundary cases use the same construction or machines with
+zero or one accepting path.
+\end{proof}
+
+\section{Plethysm and Hermite coefficients}
+\begin{proof}[Proof of Theorem~\ref{thm:pleth}]
+Evaluating the plethysm alphabet gives
+\[
+s_\mu[s_{(k)}](1,q)=s_\mu(1,q,\ldots,q^k),
+\]
+because $s_{(k)}(1,q)=1+q+\cdots+q^k$. Schur polynomials with more
+than two rows vanish in these two variables, while
+\[
+s_{(wk-t,t)}(1,q)=q^t+q^{t+1}+\cdots+q^{wk-t}
+\quad(0\leq2t\leq wk).
+\]
+For $0\leq2r\leq wk$, comparison of adjacent coefficients gives
+\begin{equation}\label{eq:diff}
+a_{\mu[(k)]}^{(wk-r,r)}=c_r(\mu,k)-c_{r-1}(\mu,k),\qquad c_{-1}=0.
+\end{equation}
+Both terms are in $\FL$. Subtraction is in logarithmic space: to output
+a bit, rescan less significant positions to recompute its borrow,
+keeping a single borrow bit. Compose this with the coefficient bit
+algorithms using Lemma~\ref{lem:compose}. The difference is nonnegative
+because it is a representation multiplicity, and it is at most
+$c_r<2^W$. The fixed-length comparison machine in the preceding proof
+puts it in $\sharpL$. No closure of $\sharpL$ under subtraction is used,
+and no bound on $\len(\mu)$ was imposed.
+\end{proof}
+
+For $\mu=(n)$, let $p_r(n\times k)$ count partitions of $r$ contained
+in an $n$-by-$k$ rectangle. Then
+\[
+s_{(n)}(1,q,\ldots,q^k)=\genfrac{[}{]}{0pt}{}{n+k}{k}_q
+=\sum_rp_r(n\times k)q^r.
+\]
+The Hermite identity \cite[(6.1)--(6.2)]{GIP} yields
+\begin{equation}\label{eq:hermite}
+a_{(n)[(k)]}^{(nk-r,r)}
+=g\bigl((nk-r,r),(n^k),(n^k)\bigr)
+=p_r(n\times k)-p_{r-1}(n\times k)
+\end{equation}
+for $0\leq2r\leq nk$, where $(n^k)$ has $k$ parts equal to $n$.
+Empty cases are interpreted by the constant Schur polynomial. These
+coefficients are therefore in $\FLpos\subseteq\sharpL$.
+
+There is also a shorter special-case size bound. Set $W=n+k+1$,
+as $\sum_rp_r(n\times k)=\binom{n+k}{k}<2^W$. At $q=2^W$,
+\[
+\genfrac{[}{]}{0pt}{}{n+k}{k}_{2^W}
+=\frac{\prod_{i=1}^k(2^{W(n+i)}-1)}
+{\prod_{i=1}^k(2^{Wi}-1)}.
+\]
+For $k>0$, the numerator and denominator have at most
+$Wk(2n+k+1)/2$ and $Wk(k+1)/2$ bits, respectively. If $k=0$,
+both products are empty and the quotient is one.
+
+\section{A mixed-encoding extension}
+\begin{proof}[Proof of Theorem~\ref{thm:mixed}]
+For every $0\leq t\leq r$, the tableau expansion shows
+\begin{equation}\label{eq:truncate}
+[q^t]s_\lambda(1,q,\ldots,q^k)
+=[q^t]s_\lambda(1,q,\ldots,q^{\min(k,r)}).
+\end{equation}
+A tableau using a letter of weight $q^j$ for $j>r$ has total degree
+greater than $r$, since all other weights have nonnegative degree.
+Tableaux using only retained letters satisfy exactly the same row and
+column conditions. This proves the claimed bijective restriction,
+including cases where the truncated alphabet is too short for the shape.
+
+While reading binary $k$, maintain a saturated counter updated by
+$z\leftarrow\min(r,2z+b)$ for the next bit $b$. This computes
+$\min(k,r)$ in logarithmic space. Its virtual unary representation has
+polynomial length because $r$ is unary. Theorem~\ref{thm:main} and
+Lemma~\ref{lem:compose} apply, proving the coefficient claim.
+The same truncation preserves both coefficients in \eqref{eq:diff}.
+
+For the validity condition of Theorem~\ref{thm:pleth}, if $w>0$ compute
+$\widehat k=\min(k,2r+1)$ by saturation. Then
+$2r\leq wk$ if and only if $2r\leq w\widehat k$, and the latter
+comparison uses polynomially bounded integers. If $w=0$, validity
+requires $r=0$. Thus the implicit target shape can be checked without
+storing a large binary product. This extension does not encode all
+parameters in binary.
+\end{proof}
+
+\section{Relation to the stated questions and limitations}
+The reference for numbering is the fixed arXiv v1 PDF of
+Guti\'errez, Ikenmeyer, and Panova~\cite{GIP}, dated 17 July 2026.
+Its experimental HTML rendering has different labels:
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}lllX@{}}
+\toprule
+v1 PDF question & Page & HTML label & Consequence here\\
+\midrule
+6.4 & 28 & 6.4 & Hermite coefficients are in $\FLpos\subseteq\sharpL$.\\
+6.22 & 36 & 6.21 & Principal specialization, with arbitrary partition length.\\
+6.29 & 38 & 6.27 & Two-row $\mathrm{GL}_2$ plethysm, with arbitrary outer length.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+For Question 6.29, $\sharpL\subseteq
+\#\mathrm{TISP}(\operatorname{poly}(L),\log^2L)$ gives the requested
+inclusion. These are three consequences of one main coefficient theorem.
+The mixed-encoding extension is not counted as a separately sourced
+open question.
+
+The argument uses a single-variable polynomial whose exact integer
+evaluation has polynomial binary length. It does not give an algorithm
+of this kind for general Littlewood--Richardson or Kronecker coefficients,
+and does not resolve whether general Kronecker coefficients belong to
+$\#\mathrm P$ or separate them from that class.
+
+The accompanying Python checks compare exact integer substitution with
+independent tableau and rectangle-partition computations. They check
+finite values and identities; they do not implement the logarithmic-space
+multiplication and division transducers. The space theorem follows from
+the proof and \cite{HAB}, not from the memory use of those programs.
+
+\paragraph{Research-status notice.}
+This draft received internal AI-assisted mathematical review and finite
+exact checks. It has not received external peer review or author
+confirmation, and is not a Lean formalization. No global priority claim
+is made. The central observation applies classical formulas and
+integer-arithmetic results to the stated coefficient functions.
+
+\begin{thebibliography}{9}
+\bibitem{GIP}
+\'Alvaro Guti\'errez, Christian Ikenmeyer, and Greta Panova.
+\emph{Counting in logarithmic space}.
+arXiv:2607.15881v1, 17 July 2026.
+\href{https://arxiv.org/pdf/2607.15881v1}{Fixed v1 PDF};
+\href{https://arxiv.org/html/2607.15881v1}{v1 HTML}.
+
+\bibitem{HAB}
+William Hesse, Eric Allender, and David A. Mix Barrington.
+Uniform constant-depth threshold circuits for division and iterated
+multiplication.
+\emph{Journal of Computer and System Sciences} \textbf{65}(4),
+695--716, 2002.
+\href{https://people.cs.rutgers.edu/~allender/papers/division.pdf}{Author PDF}.
+
+\bibitem{HABerr}
+William Hesse, Eric Allender, and David A. Mix Barrington.
+Corrigendum for Uniform Constant-Depth Threshold Circuits for Division
+and Iterated Multiplication.
+\emph{Journal of Computer and System Sciences} \textbf{80},
+496--497, 2014.
+\href{https://people.cs.rutgers.edu/~allender/papers/hab.corrigendum.pdf}{Author PDF}.
+\end{thebibliography}
+\end{document}

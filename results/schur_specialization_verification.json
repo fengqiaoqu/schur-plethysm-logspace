@@ -1,0 +1,2268 @@
+{
+  "status": "all_exact_checks_passed",
+  "scope": {
+    "size": [
+      0,
+      6
+    ],
+    "d": [
+      1,
+      5
+    ],
+    "length_at_most_d": true
+  },
+  "identity": "s_lambda(1,q,...,q^(d-1)) = q^b(lambda) product_(i,j in lambda)(1-q^(d+j-i))/(1-q^h(i,j)), with one-based (i,j)",
+  "base_bound": "B=2^(|lambda|*bit_length(d)+1) > d^|lambda| >= total number of SSYT",
+  "shape_dimension_pairs": 102,
+  "coefficient_checks": 1228,
+  "exact_divisibility_checks": 102,
+  "limitations": "Finite exact comparisons with direct SSYT enumeration; no logspace or counting-class conclusion is inferred from the computation.",
+  "all_results": [
+    {
+      "shape": [],
+      "d": 1,
+      "size": 0,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [],
+      "d": 2,
+      "size": 0,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [],
+      "d": 3,
+      "size": 0,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [],
+      "d": 4,
+      "size": 0,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [],
+      "d": 5,
+      "size": 0,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "d": 1,
+      "size": 1,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "d": 2,
+      "size": 1,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "d": 3,
+      "size": 1,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "d": 4,
+      "size": 1,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "d": 5,
+      "size": 1,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2
+      ],
+      "d": 1,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        2
+      ],
+      "d": 2,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2
+      ],
+      "d": 3,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2
+      ],
+      "d": 4,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2
+      ],
+      "d": 5,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1
+      ],
+      "d": 2,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1
+      ],
+      "d": 3,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 2,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3
+      ],
+      "d": 1,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        3
+      ],
+      "d": 2,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        3
+      ],
+      "d": 3,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        3
+      ],
+      "d": 4,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        3
+      ],
+      "d": 5,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1
+      ],
+      "d": 2,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1
+      ],
+      "d": 3,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1
+      ],
+      "d": 4,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1
+      ],
+      "d": 5,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        6,
+        6,
+        5,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "d": 3,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 3,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4
+      ],
+      "d": 1,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        4
+      ],
+      "d": 2,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        4
+      ],
+      "d": 3,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        4
+      ],
+      "d": 4,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        4
+      ],
+      "d": 5,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        5,
+        5,
+        7,
+        7,
+        8,
+        7,
+        7,
+        5,
+        5,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1
+      ],
+      "d": 2,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1
+      ],
+      "d": 3,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1
+      ],
+      "d": 4,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        7,
+        7,
+        5,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1
+      ],
+      "d": 5,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        9,
+        11,
+        13,
+        13,
+        13,
+        11,
+        9,
+        6,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "d": 2,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "d": 3,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "d": 4,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        1,
+        3,
+        3,
+        4,
+        3,
+        3,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "d": 5,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        1,
+        3,
+        4,
+        6,
+        6,
+        8,
+        6,
+        6,
+        4,
+        3,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1
+      ],
+      "d": 3,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        7,
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 4,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        5
+      ],
+      "d": 1,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        5
+      ],
+      "d": 2,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        5
+      ],
+      "d": 3,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        5
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        5
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        11,
+        11,
+        12,
+        11,
+        11,
+        9,
+        8,
+        6,
+        5,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1
+      ],
+      "d": 2,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1
+      ],
+      "d": 3,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        11,
+        11,
+        10,
+        8,
+        6,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        10,
+        14,
+        18,
+        21,
+        23,
+        24,
+        23,
+        21,
+        18,
+        14,
+        10,
+        7,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2
+      ],
+      "d": 2,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2
+      ],
+      "d": 3,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        9,
+        9,
+        8,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        4,
+        7,
+        11,
+        14,
+        18,
+        20,
+        21,
+        20,
+        18,
+        14,
+        11,
+        7,
+        4,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1
+      ],
+      "d": 3,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        5,
+        7,
+        11,
+        13,
+        16,
+        16,
+        16,
+        13,
+        11,
+        7,
+        5,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1
+      ],
+      "d": 3,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        6,
+        9,
+        10,
+        11,
+        10,
+        9,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 5,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        6
+      ],
+      "d": 1,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        6
+      ],
+      "d": 2,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        6
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        6
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        7,
+        8,
+        8,
+        8,
+        7,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        6
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        1,
+        1,
+        2,
+        3,
+        5,
+        6,
+        9,
+        10,
+        13,
+        14,
+        16,
+        16,
+        18,
+        16,
+        16,
+        14,
+        13,
+        10,
+        9,
+        6,
+        5,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "shape": [
+        5,
+        1
+      ],
+      "d": 2,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        5,
+        1
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        5,
+        1
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        9,
+        11,
+        14,
+        15,
+        16,
+        15,
+        14,
+        11,
+        9,
+        6,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        5,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        11,
+        15,
+        21,
+        26,
+        31,
+        35,
+        38,
+        38,
+        38,
+        35,
+        31,
+        26,
+        21,
+        15,
+        11,
+        7,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        2
+      ],
+      "d": 2,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        2
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        4,
+        4,
+        5,
+        4,
+        4,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        2
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        5,
+        7,
+        11,
+        13,
+        16,
+        16,
+        16,
+        13,
+        11,
+        7,
+        5,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        2
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        1,
+        2,
+        5,
+        8,
+        14,
+        19,
+        27,
+        32,
+        39,
+        41,
+        44,
+        41,
+        39,
+        32,
+        27,
+        19,
+        14,
+        8,
+        5,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1,
+        1
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        9,
+        10,
+        9,
+        8,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        5,
+        8,
+        13,
+        17,
+        23,
+        26,
+        30,
+        30,
+        30,
+        26,
+        23,
+        17,
+        13,
+        8,
+        5,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "d": 2,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        4,
+        6,
+        6,
+        8,
+        6,
+        6,
+        4,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        5,
+        8,
+        10,
+        15,
+        16,
+        19,
+        19,
+        19,
+        16,
+        15,
+        10,
+        8,
+        5,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        3,
+        5,
+        8,
+        10,
+        10,
+        10,
+        8,
+        5,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        3,
+        6,
+        11,
+        17,
+        23,
+        29,
+        33,
+        34,
+        33,
+        29,
+        23,
+        17,
+        11,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        9,
+        10,
+        9,
+        8,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "d": 3,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        4,
+        6,
+        6,
+        8,
+        6,
+        6,
+        4,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "d": 4,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        7,
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "d": 5,
+      "size": 6,
+      "all_coefficients_from_SSYT_enumeration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

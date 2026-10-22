@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+artifacts/
+.venv/
+.env
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+build/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "claim": "For 0<=t<=r, specialization coefficients are unchanged by k -> min(k,r).",
+  "shape_size_maximum": 5,
+  "k_maximum": 8,
+  "r_maximum": 12,
+  "shape_k_r_cases": 1602,
+  "saturation_checks": 84,
+  "binary_k_length_tested_maximum": 4097,
+  "oracle": "direct semistandard Young-tableau enumeration",
+  "limitation": "Finite identity and capped-input checks; not an implementation or proof of a logspace bound."
+}

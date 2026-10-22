@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "title": "Principal Schur specialization and GL2 plethysm in logarithmic space",
+  "title_zh_cn": "主特化 Schur 系数与 GL₂ plethysm 的对数空间算法",
+  "repository_url": "https://github.com/fengqiaoqu/schur-plethysm-logspace",
+  "maintainer": "fengqiaoqu",
+  "package_version": "0.1.0",
+  "date": "2026-10-22",
+  "status": "research_draft",
+  "review_status": "internal_review_only",
+  "originality_status": "originality_unconfirmed",
+  "ai_assisted": true,
+  "external_peer_review_completed": false,
+  "global_priority_claimed": false,
+  "major_breakthrough_claimed": false,
+  "contribution_structure": {
+    "main_theorem_count": 1,
+    "main_theorem": "Principal Schur specialization coefficient functions are in FL_nonnegative, hence in #L, with unbounded partition length.",
+    "direct_corollaries": [
+      "The specified two-row GL2 plethysm coefficient functions are in FL_nonnegative, hence in #L.",
+      "Hermite coefficient functions are in FL_nonnegative, hence in #L."
+    ],
+    "three_independent_breakthroughs_claimed": false
+  },
+  "math_scope_encoding": {
+    "primary": {
+      "partition_parts": "unary",
+      "k": "unary",
+      "r": "unary",
+      "integer_output": "binary",
+      "partition_length": "unbounded",
+      "space_measure": "O(log L) work space for total input length L",
+      "machine_model": "read-only input, write-only output, deterministic logspace transducer"
+    },
+    "plethysm_valid_domain": "mu is a partition of w, k >= 0, and 0 <= 2r <= wk",
+    "hermite_valid_domain": "n,k >= 0 and 0 <= 2r <= nk; degenerate cases handled separately",
+    "mixed_encoding_extension": {
+      "partition_parts": "unary",
+      "r": "unary",
+      "k": "binary",
+      "reduction": "Replace k by min(k,r) for coefficients of degrees at most r.",
+      "all_binary_encoding_claimed": false
+    }
+  },
+  "public_question_mapping": [
+    {
+      "source": "arXiv:2607.15881v1",
+      "pdf_question": "6.22",
+      "pdf_page": 36,
+      "html_question": "6.21",
+      "role": "main_theorem",
+      "answer_status": "complete_affirmative_proof_draft_pending_external_confirmation"
+    },
+    {
+      "source": "arXiv:2607.15881v1",
+      "pdf_question": "6.4",
+      "pdf_page": 28,
+      "html_question": "6.4",
+      "role": "Hermite_corollary",
+      "answer_status": "complete_affirmative_proof_draft_pending_external_confirmation"
+    },
+    {
+      "source": "arXiv:2607.15881v1",
+      "pdf_question": "6.29",
+      "pdf_page": 38,
+      "html_question": "6.27",
+      "role": "GL2_corollary",
+      "answer_status": "complete_affirmative_proof_draft_pending_external_confirmation"
+    }
+  ],
+  "general_kronecker_problem_solved": false,
+  "general_kronecker_sharp_p_nonmembership_proved": false,
+  "general_multivariate_or_schur_coefficient_extraction_solved": false,
+  "new_natural_combinatorial_rule_claimed": false,
+  "evidence": {
+    "ai_agent_reviews": "internal only; not external peer review",
+    "finite_exact_checks": "support arithmetic identities and implementation boundaries",
+    "finite_checks_prove_space_bound": false,
+    "formalization_status": "No Lean formalization is claimed."
+  },
+  "project_provenance": "Independent derivations within the same project were consolidated into one manuscript; overlapping conclusions are not counted as separate discoveries.",
+  "external_dependencies": [
+    {
+      "reference": "Hesse-Allender-Barrington 2002",
+      "doi": "10.1016/S0022-0000(02)00025-9",
+      "used_result": "Corollary 6.3; uniform integer iterated multiplication and division"
+    },
+    {
+      "reference": "Hesse-Allender-Barrington 2014 corrigendum",
+      "doi": "10.1016/j.jcss.2013.09.002",
+      "scope": "Retracts parts 1 and 3 of Corollary 6.6, not the integer arithmetic result used here."
+    }
+  ],
+  "licensing": {
+    "project_wide_reuse_license": "unspecified",
+    "third_party_rights": "retained",
+    "notice_file": "NOTICE.md"
+  }
+}
