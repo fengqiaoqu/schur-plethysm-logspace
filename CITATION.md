@@ -1,6 +1,7 @@
 # Citing this research draft
 
-**Principal Schur specialization and GL2 plethysm in logarithmic space**  
+**Principal Schur specialization and GL2 plethysm in logarithmic space**
+
 主特化 Schur 系数与 GL₂ plethysm 的对数空间算法
 
 Maintainer: [fengqiaoqu](https://github.com/fengqiaoqu). Package version: 0.1.0. Date: 2026-10-22.

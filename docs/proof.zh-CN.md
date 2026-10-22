@@ -130,4 +130,3 @@ p_{200}-p_{199}=516643.
 $$
 
 复现脚本位于 scripts，冻结结果位于 results；运行 python -B reproduce.py 可重新核对。参考文献链接见 references.md。
-
